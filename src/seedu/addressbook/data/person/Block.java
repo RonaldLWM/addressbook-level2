@@ -11,11 +11,11 @@ public class Block {
 		return blockNum;
 	}
 	
-	public void setBlockNum(int inputBlockNum) {
-		this.blockNum = inputBlockNum;
+	public void setBlockNum(int blockNum) {
+		this.blockNum = blockNum;
 	}
 
-	public boolean isBlockValid() {
+	public boolean isValidBlock() {
 		if (blockNum >= 0 && blockNum <1000) {
 			return true;
 		}
