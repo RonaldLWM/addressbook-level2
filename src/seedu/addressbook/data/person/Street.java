@@ -7,7 +7,7 @@ public class Street {
 		this.street = streetName;
 	}
 
-	public String getStreet() {
+	public String getStreetName() {
 		return this.street;
 	}
 

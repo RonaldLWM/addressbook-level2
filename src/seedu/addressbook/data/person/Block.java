@@ -1,24 +1,18 @@
 package seedu.addressbook.data.person;
 
 public class Block {
-	private int blockNum;
+	private String blockNum;
 	
-	public Block(int blockNum) {
+	public Block(String blockNum) {
 		this.blockNum = blockNum;
 	}
 	
-	public int getBlockNumber() {
+	public String getBlockNumber() {
 		return blockNum;
 	}
 	
-	public void setBlockNum(int blockNum) {
+	public void setBlockNum(String blockNum) {
 		this.blockNum = blockNum;
 	}
 
-	public boolean isValidBlock() {
-		if (blockNum >= 0 && blockNum <1000) {
-			return true;
-		}
-		return false;
-	}
 }
