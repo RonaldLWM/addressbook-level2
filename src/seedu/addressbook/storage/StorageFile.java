@@ -82,6 +82,8 @@ public class StorageFile {
      * Saves all data to this storage file.
      *
      * @throws StorageOperationException if there were errors converting and/or storing data to file.
+     * 
+     * creates a new file if file not found while saving and tries saving again
      */
     public void save(AddressBook addressBook) throws StorageOperationException {
 
@@ -96,6 +98,9 @@ public class StorageFile {
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(toSave, fileWriter);
 
+        } catch (FileNotFoundException fnfe) {
+            final AddressBook empty = new AddressBook();
+            save(empty);
         } catch (IOException ioe) {
             throw new StorageOperationException("Error writing to file: " + path);
         } catch (JAXBException jaxbe) {
