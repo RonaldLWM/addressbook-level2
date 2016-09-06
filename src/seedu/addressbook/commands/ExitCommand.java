@@ -1,5 +1,10 @@
 package seedu.addressbook.commands;
 
+import java.util.ArrayList;
+
+import seedu.addressbook.data.AddressBook;
+import seedu.addressbook.data.tag.Tagging;
+
 /**
  * Terminates the program.
  */
@@ -13,7 +18,14 @@ public class ExitCommand extends Command {
 
     @Override
     public CommandResult execute() {
+    	listAllTaggings(addressBook.getAllTaggings());
         return new CommandResult(MESSAGE_EXIT_ACKNOWEDGEMENT);
+    }
+    
+    public void listAllTaggings(ArrayList<Tagging> allTaggings) {
+    	for(Tagging tagging : allTaggings) { 
+    		System.out.println(tagging.getPrintableString());
+    	}
     }
 
     public static boolean isExit(Command command) {
