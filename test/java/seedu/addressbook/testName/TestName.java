@@ -13,12 +13,12 @@ public class TestName {
     public void testIsSimilar() throws IllegalValueException {
         Name personName = new Name("Ronald");
         assertTrue(personName.isSimilar(null));
-        assertTrue(personName.isSimilar("RONALD"));
-        assertTrue(personName.isSimilar("RoNaLD"));
-        assertTrue(personName.isSimilar("aldron"));
-        assertTrue(personName.isSimilar("ladnor"));
-        assertTrue(personName.isSimilar("Ron");
-        assertTrue(personName.isSimilar("RonaldMcD"));
+        assertTrue(personName.isSimilar(new Name("RONALD")));
+        assertTrue(personName.isSimilar(new Name("RoNaLD")));
+        assertTrue(personName.isSimilar(new Name("aldron")));
+        assertTrue(personName.isSimilar(new Name("ladnor")));
+        assertTrue(personName.isSimilar(new Name("Ron")));
+        assertTrue(personName.isSimilar(new Name("RonaldMcD")));
     }
 
 }

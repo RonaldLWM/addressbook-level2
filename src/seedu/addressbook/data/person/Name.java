@@ -60,5 +60,22 @@ public class Name {
     public int hashCode() {
         return fullName.hashCode();
     }
+    
+    public boolean isSimilar(Name other) {
+        if (other.toString() == null) {
+            return false;
+        }
+        if (this.fullName.compareToIgnoreCase(other.toString()) == 0) {
+            return true;
+        }
+        if (this.fullName.toLowerCase().contains(other.toString().toLowerCase())) {
+            return true;
+        }
+        if (other.toString().toLowerCase().contains(this.fullName.toLowerCase())) {
+            return true;
+        }
+        return false;
+        
+    }
 
 }
