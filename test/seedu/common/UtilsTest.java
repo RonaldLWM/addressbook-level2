@@ -16,7 +16,7 @@ public class UtilsTest {
         boolean expected = Utils.isAnyNull("hi", "hello", "how are you");
         boolean actual = Utils.isAnyNull("hi", "hello", "how are you?");
 
-        assertFalse(expected == actual);
+        assertTrue(expected == actual);
     }
 
     @Test
@@ -37,6 +37,6 @@ public class UtilsTest {
         boolean expected = Utils.elementsAreUnique(items);
         boolean actual = Utils.elementsAreUnique(alphabets);
 
-        assertFalse(expected == actual);
+        assertTrue(expected == actual);
     }
 }
