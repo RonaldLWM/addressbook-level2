@@ -14,7 +14,7 @@ public class UtilsTest {
     public void testIsAnyNull() {
 
         boolean expected = Utils.isAnyNull("hi", "hello", "how are you");
-        boolean actual = Utils.isAnyNull("hi", "hello", "how are you?", null);
+        boolean actual = Utils.isAnyNull("hi", "hello", "how are you?");
 
         assertFalse(expected == actual);
     }
@@ -31,8 +31,8 @@ public class UtilsTest {
         ArrayList<String> alphabets = new ArrayList<String>();
 
         alphabets.add("a");
-        alphabets.add("a");
         alphabets.add("b");
+        alphabets.add("c");
 
         boolean expected = Utils.elementsAreUnique(items);
         boolean actual = Utils.elementsAreUnique(alphabets);
